@@ -64,6 +64,22 @@ def howManyWindowsWithTotalGreaterThanVal(array,k,val):
 
     print(ans)
 
+def printAllSubArrays(array,k):
+    temp=[]
+
+    for i in range(k):
+        temp.append(array[i])
+
+    print temp
+
+    for j in range(k,len(array)):
+        tail=array[j]
+        temp.append(tail)
+        temp.pop(0)
+
+        print(temp)
+
+
 
 
 def main():
@@ -80,7 +96,10 @@ def main():
     print(array)
     print("windows with total higher then 50")
     howManyWindowsWithTotalGreaterThanVal(array,4,100)
-
+    print("\n")
+    print(array)
+    print("print all sub array's size of 3")
+    printAllSubArrays(array,3)
     #first i want to check the highest value in a sliding window
 
 main()
